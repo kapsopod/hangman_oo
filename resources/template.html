@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" type="image/png" href="pics/favicon.ico">
+    <title>Hangman</title>
+
+    <script type="application/javascript">
+      function validateInput() {
+        var x = document.forms["inputForm"]["userInput"].value;
+        if (x === '' || !/^[a-zA-Z]*$/g.test(x)) {
+          alert("You are only allowed to enter a letter.");
+          document.forms["inputForm"]["userInput"].value = '';
+          document.forms["inputForm"]["userInput"].focus();
+          return false;
+        }
+      }
+    </script>
+</head>
+<body>
+    {HANGMAN_PIC}
+    {ATTEMPTS_REMAINING}
+    {LETTERS_GUESSED}
+    <br/>
+    {HIDDEN_CHARACTERS}
+    {RESULT}
+    <br/>
+    <br/>
+    {FORM}
+</body>
+</html>
